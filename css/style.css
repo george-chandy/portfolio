@@ -442,14 +442,34 @@ textarea {
       .project-details__content-title {
         font-size: 2.4rem; } }
 
-.project-details__showcase-img-cont {
+/* .project-details__showcase-img-cont {
   width: 100%;
   margin-bottom: 6rem; }
 
 .project-details__showcase-img {
-  width: 100%; }
+  width: 100%; } */
 
-.project-details__content-main {
+  .project-details__showcase-img-cont {
+    width: 100%;
+    margin-bottom: 6rem;
+    position: relative; /* Needed for absolute positioning */
+  }
+  
+  .project-details__showcase-img {
+    width: 100%;
+  }
+  
+  .project-details__superimposed-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Perfectly centers the image */
+    width: 50%; /* Responsive size relative to container */
+    max-width: 500px; /* Limits maximum size for larger screens */
+    min-width: 90px; /* Ensures it's visible on small screens */
+    opacity: 0.9; /* Optional transparency */
+  }
+  .project-details__content-main {
   width: 100%;
   max-width: 70rem;
   margin: auto; }
@@ -702,3 +722,51 @@ textarea {
   to {
     opacity: 0;
     top: 27px; } }
+
+    .projects__row {
+      display: flex;
+      flex-direction: column; /* Stack image and content vertically */
+      align-items: center; /* Center content horizontally */
+      text-align: center; /* Center the text */
+      padding: 2rem;
+      border: 1px solid #e0e0e0;
+      border-radius: 5px;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .projects__row-img-cont {
+      width: 100%;
+      max-width: 400px; /* Optional: control image size */
+      margin-bottom: 1.5rem;
+    }
+    
+    .projects__row-img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    
+    .projects__row-content-title {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    
+    .projects__row-content-desc {
+      margin-bottom: 1.5rem;
+      color: #555;
+    }
+    
+    .projects__row-content a {
+      text-decoration: none;
+    }
+
+    .projects__row-content a {
+      display: inline-block; /* Makes the button size wrap content properly */
+      margin: 0 auto; /* Auto left and right margin centers it in a flex container */
+    }
+    
+    .projects__row-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Ensures everything inside is centered, including button */
+    }
